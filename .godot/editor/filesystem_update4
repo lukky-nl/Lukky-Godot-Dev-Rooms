@@ -1,0 +1,5 @@
+res://scenes/stages/dev_room_sci_fi.tscn
+res://scenes/stages/dev_room_modern.tscn
+res://scenes/stages/dev_room_old.tscn
+res://scenes/basic_fps_controller.tscn
+res://scenes/ball.tscn

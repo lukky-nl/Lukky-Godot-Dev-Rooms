@@ -1,0 +1,11 @@
+Decal
+Node3D
+CollisionShape3D
+MeshInstance3D
+RigidBody3D
+Camera3D
+CharacterBody3D
+StaticBody3D
+OmniLight3D
+SpotLight3D
+Node

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://csf10okooq1ok"]
+
+[ext_resource type="Script" path="res://scripts/player/basic_fps_controller.gd" id="1_idhrq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xfc8w"]
+
+[node name="basic_fps_controller" type="CharacterBody3D"]
+script = ExtResource("1_idhrq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xfc8w")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]

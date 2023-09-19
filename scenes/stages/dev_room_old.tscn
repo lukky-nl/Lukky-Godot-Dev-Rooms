@@ -1,0 +1,148 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcf37kth3ghri"]
+
+[ext_resource type="PackedScene" uid="uid://bhf2q878c5lhv" path="res://assets/models/old/environment/dev_room_old.glb" id="1_5mmeq"]
+[ext_resource type="Texture2D" uid="uid://bck0qn7we3gai" path="res://assets/images/lukky_logo.png" id="2_hy4if"]
+[ext_resource type="PackedScene" uid="uid://csf10okooq1ok" path="res://scenes/basic_fps_controller.tscn" id="2_ka81k"]
+[ext_resource type="Texture2D" uid="uid://c7pnart5w3uy7" path="res://icon.svg" id="3_5cxr7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wslih"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hqbuv"]
+sky_material = SubResource("ProceduralSkyMaterial_wslih")
+
+[sub_resource type="Environment" id="Environment_xwryp"]
+background_mode = 1
+background_color = Color(0.0392157, 0.0313726, 0.0313726, 1)
+sky = SubResource("Sky_hqbuv")
+ambient_light_source = 2
+ambient_light_color = Color(0.764706, 0.72549, 0.737255, 1)
+ambient_light_energy = 0.36
+tonemap_mode = 2
+ssao_enabled = true
+ssao_intensity = 3.18
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.403922, 0.368627, 0.329412, 1)
+fog_density = 0.0005
+fog_sky_affect = 0.0
+volumetric_fog_density = 0.005
+volumetric_fog_albedo = Color(0.992157, 0.894118, 0.752941, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oj8qm"]
+size = Vector3(22, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pljbo"]
+size = Vector3(1, 5.5, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ki2t"]
+size = Vector3(22, 8, 1)
+
+[node name="dev_room_old" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xwryp")
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="dev_room_old" parent="stage" instance=ExtResource("1_5mmeq")]
+
+[node name="lights" type="Node3D" parent="stage"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.81758, -0.488968)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.03877, 5.81758, -0.488968)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.00503, 5.81758, -0.488968)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.00503, 5.81758, -16.5136)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0337358, 5.81758, -16.5136)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.03877, 5.81758, -16.5136)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.03877, 5.81758, 15.5279)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0337348, 5.81758, 15.5279)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="stage/lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.03877, 5.81758, 15.5279)
+light_energy = 10.448
+shadow_enabled = true
+spot_range = 15.169
+spot_angle = 60.52
+
+[node name="posters" type="Node3D" parent="stage"]
+
+[node name="Decal" type="Decal" parent="stage/posters"]
+transform = Transform3D(-0.656471, 4.97016e-08, -0.175901, 0.175901, -4.4073e-08, -0.656471, -5.9415e-08, -0.679629, 2.97075e-08, 0.42676, 2.56918, 24.291)
+texture_albedo = ExtResource("2_hy4if")
+
+[node name="Decal2" type="Decal" parent="stage/posters"]
+transform = Transform3D(-0.490042, 5.52079e-08, 0.282926, -0.282926, 3.31375e-09, -0.490042, -4.94683e-08, -0.565852, 2.47342e-08, -0.57324, 3.12026, 24.291)
+texture_albedo = ExtResource("3_5cxr7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stage"]
+
+[node name="floor" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_oj8qm")
+
+[node name="wall_long" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 2.73842, 0)
+shape = SubResource("BoxShape3D_pljbo")
+
+[node name="wall_long2" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 2.73842, 0)
+shape = SubResource("BoxShape3D_pljbo")
+
+[node name="wall_short" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -24.5)
+shape = SubResource("BoxShape3D_7ki2t")
+
+[node name="wall_short2" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 24.5)
+shape = SubResource("BoxShape3D_7ki2t")
+
+[node name="basic_fps_controller" parent="." instance=ExtResource("2_ka81k")]

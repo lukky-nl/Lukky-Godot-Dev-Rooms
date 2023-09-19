@@ -1,0 +1,164 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpl5qsrkk2lp4"]
+
+[ext_resource type="PackedScene" uid="uid://nepbe3hc43n2" path="res://assets/models/modern/environment/dev_room_modern.glb" id="1_0kmvr"]
+[ext_resource type="Texture2D" uid="uid://bck0qn7we3gai" path="res://assets/images/lukky_logo.png" id="2_trmlg"]
+[ext_resource type="PackedScene" uid="uid://csf10okooq1ok" path="res://scenes/basic_fps_controller.tscn" id="2_x63y4"]
+[ext_resource type="Texture2D" uid="uid://c7pnart5w3uy7" path="res://icon.svg" id="3_sg4c2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pneq4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5xobm"]
+sky_material = SubResource("ProceduralSkyMaterial_pneq4")
+
+[sub_resource type="Environment" id="Environment_t3k6c"]
+background_mode = 2
+sky = SubResource("Sky_5xobm")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.8
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_c1jsd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2rim"]
+size = Vector3(26, 1, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b01r3"]
+size = Vector3(26, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmu7x"]
+size = Vector3(0.558179, 4.85718, 0.691945)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcrpe"]
+size = Vector3(23.9423, 0.682228, 1)
+
+[node name="dev_room_modern" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t3k6c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.903582, -0.426611, 0.0392673, 0.123675, 0.347504, 0.929487, -0.410175, -0.835011, 0.366759, 0, 0, 0)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_split_2 = 0.301
+directional_shadow_max_distance = 248.5
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="dev_room_modern" parent="stage" instance=ExtResource("1_0kmvr")]
+
+[node name="shadow_casters" type="Node3D" parent="stage"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(24.9646, 0, 0, 0, 5.39412, 0, 0, 0, 1, 0, 2.35218, -8.29586)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(24.9646, 0, 0, 0, 4.73252, 0, 0, 0, 1, 0, 2.35218, 5.91281)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(25.9772, 0, 0, 0, -1.23097e-07, 0.535857, 0, -2.81614, -2.3423e-08, 0, 5.18358, 4.62105)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(25.9772, 0, 0, 0, -2.66291e-07, 0.535857, 0, -6.09203, -2.3423e-08, 0, 5.0028, -6.08575)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(25.9772, 0, 0, 0, -1.54053e-07, 0.535857, 0, -3.52433, -2.3423e-08, 0, 6.94917, -0.0388329)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(25.9772, 0, 0, 0, -8.3693e-07, 0.535857, 0, -19.1467, -2.3423e-08, 0, -0.648026, -0.0596113)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(-6.95631e-07, 0, -1, 0, 5.39412, 0, 15.9142, 0, -4.37114e-08, -12.852, 2.35218, -1.05561)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="stage/shadow_casters"]
+transform = Transform3D(-6.95631e-07, 0, -1, 0, 5.39412, 0, 15.9142, 0, -4.37114e-08, 12.8016, 2.35218, -1.05561)
+mesh = SubResource("BoxMesh_c1jsd")
+
+[node name="posters" type="Node3D" parent="stage"]
+
+[node name="Decal" type="Decal" parent="stage/posters"]
+transform = Transform3D(-3.07198e-08, -0.679628, 3.73964e-08, 0.175901, -4.4073e-08, -0.656471, 0.656471, -1.99941e-08, 0.175901, 12.192, 2.24933, -0.0943906)
+texture_albedo = ExtResource("2_trmlg")
+
+[node name="Decal2" type="Decal" parent="stage/posters"]
+transform = Transform3D(-2.80479e-08, -0.565852, 1.23671e-08, -0.282926, 3.31376e-09, -0.490042, 0.490042, -3.04738e-08, -0.282926, 12.192, 2.80041, 0.905609)
+texture_albedo = ExtResource("3_sg4c2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stage"]
+
+[node name="floor" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1)
+shape = SubResource("BoxShape3D_x2rim")
+
+[node name="wall" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5.84136)
+shape = SubResource("BoxShape3D_b01r3")
+
+[node name="wall2" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -8.10996)
+shape = SubResource("BoxShape3D_b01r3")
+
+[node name="wall3" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2973, 2.5, -1.10996)
+shape = SubResource("BoxShape3D_b01r3")
+
+[node name="wall4" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.2789, 2.5, -1.10996)
+shape = SubResource("BoxShape3D_b01r3")
+
+[node name="collum" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35738, -3.55847)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum2" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.35738, -3.55847)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum3" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93269, 2.35738, -3.55847)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum4" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35738, 3.66094)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum5" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.35738, 3.66094)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum6" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93269, 2.35738, 3.66094)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum7" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35738, -7.4274)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum8" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.35738, -7.4274)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="collum9" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93269, 2.35738, -7.4274)
+shape = SubResource("BoxShape3D_rmu7x")
+
+[node name="vent" type="CollisionShape3D" parent="stage/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0419942, 3.89675, 4.58093)
+shape = SubResource("BoxShape3D_hcrpe")
+
+[node name="basic_fps_controller" parent="." instance=ExtResource("2_x63y4")]
